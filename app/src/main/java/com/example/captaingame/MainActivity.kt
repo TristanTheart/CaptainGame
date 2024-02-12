@@ -36,12 +36,13 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun CaptainGame() {
-    val treasuresFound = remember { mutableStateOf(0) }
+    //val treasuresFound = remember { mutableStateOf(0) }
+    val treasuresFound by remember { mutableStateOf(0) }
     val direction = remember { mutableStateOf("North") }
     val stormOrTreasure = remember { mutableStateOf("") }
 
     Column {
-        Text(text = "Treasures found: ${treasuresFound.value}")
+        Text(text = "Treasures found: ${treasuresFound}")
         Text(text = "Current Direction: ${direction.value}")
         Text(text = stormOrTreasure.value)
         Button(onClick = {
